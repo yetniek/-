@@ -1,3 +1,28 @@
+# 최근 풀이 코드
+
+def solution(array):
+    temp = []
+    numlist = list(set(array))
+    array = sorted(array) 
+    
+    for i in numlist:
+        temp.append(array.count(i))
+        
+    maxnum = max(temp) 
+    
+    if len(temp) > 1:
+        num = temp.count(maxnum)     
+        if num >= 2:
+            return -1
+        else: 
+            return numlist[temp.index(maxnum)]
+    else: 
+        return numlist[temp.index(maxnum)]
+        
+    
+ 
+
+
 # 예전 코드
 def solution(array):
     new_array = list(set(array))
